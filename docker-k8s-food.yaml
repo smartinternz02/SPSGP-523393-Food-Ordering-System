@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-store-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: book-store
+  template:
+    metadata:
+      labels:
+        app: book-store
+    spec:
+      containers:
+        - name: book-store
+          image: maheep2408/your-image-name
+          ports:
+            - containerPort: 8080
